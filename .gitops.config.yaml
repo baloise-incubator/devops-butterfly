@@ -1,0 +1,22 @@
+deploymentConfig:
+  # The organisation name of your deployment repo
+  org: baloise-incubator
+  # The repostiory name of your deployment repo
+  repository: okd4-example-apps
+  # The name of the application that is used in your deployment repo
+  applicationName: octopus
+
+previewConfig:
+  route:
+    host:
+      # your router host.
+      #{SHA256_8CHAR_BRANCH_HASH} gets replaced by a shortened hash of your feature branch name
+      template: octopus-{SHA256_8CHAR_BRANCH_HASH}.baloise.dev
+  replace:
+    # Paths that should be replaced
+    - path: devops-butterfly.image.tag
+      variable: GIT_COMMIT # this is the latest git hash of the PR branch
+    - path: devops-butterfly.ingress.host
+      variable: ROUTE_HOST # this is the resolved SHA256_8CHAR_BRANCH_HASH from above
+    - path: devops-octopus.ingress.host
+      variable: ROUTE_HOST # this is the resolved SHA256_8CHAR_BRANCH_HASH from above
