@@ -13,6 +13,11 @@ env:
 install: skip
 
 script:
+  - echo "$TRAVIS_BRANCH"
+  - echo "$TRAVIS_COMMIT"
+  - echo "$TRAVIS_PULL_REQUEST"
+  - echo "$TRAVIS_PULL_REQUEST_BRANCH"
+  - echo "$TRAVIS_PULL_REQUEST_SHA"
   - docker build -t $IMAGE_NAME:$TRAVIS_COMMIT .
   - echo "$DOCKER_ACCESS_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then docker push $IMAGE_NAME:$TRAVIS_COMMIT; fi
