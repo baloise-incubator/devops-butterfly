@@ -11,7 +11,7 @@ previewConfig:
     host:
       # your router host.
       #{SHA256_8CHAR_BRANCH_HASH} gets replaced by a shortened hash of your feature branch name
-      template: octopus-{SHA256_8CHAR_BRANCH_HASH}.baloise.dev
+      template: octopus-{SHA256_8CHAR_BRANCH_HASH}.apps.okd.baloise.dev
   replace:
     # Paths that should be replaced
     - path: devops-butterfly.image.tag
