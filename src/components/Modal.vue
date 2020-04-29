@@ -8,8 +8,8 @@
          role="dialog"
          :aria-hidden="!show">
 
-      <div class="modal-dialog modal-dialog-centered"
-           :class="[{'modal-notice': type === 'notice'}, modalClasses]">
+      <div class="modal-dialog"
+           :class="[{'modal-notice': type === 'notice'}, {'modal-dialog-centered': centered}, modalClasses]">
         <div class="modal-content" :class="[gradient ? `bg-gradient-${gradient}` : '',modalContentClasses]">
 
           <div class="modal-header" :class="[headerClasses]" v-if="$slots.header">
@@ -21,12 +21,12 @@
                       @click="closeModal"
                       data-dismiss="modal"
                       aria-label="Close">
-                <span :aria-hidden="!show">×</span>
+                <i class="tim-icons icon-simple-remove"></i>
               </button>
             </slot>
           </div>
 
-          <div class="modal-body" :class="bodyClasses">
+          <div v-if="$slots.default" class="modal-body" :class="bodyClasses">
             <slot></slot>
           </div>
 
@@ -50,6 +50,10 @@ export default {
   props: {
     show: Boolean,
     showClose: {
+      type: Boolean,
+      default: true
+    },
+    centered: {
       type: Boolean,
       default: true
     },

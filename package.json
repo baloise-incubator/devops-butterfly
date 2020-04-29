@@ -1,62 +1,40 @@
 {
-  "name": "vue-argon-dashboard",
-  "version": "0.1.0",
+  "name": "vue-black-dashboard",
+  "version": "1.0.0",
   "private": true,
+  "description": "A sample admin dashboard based on black dashboard UI template",
+  "author": "cristian.jora <joracristi@gmail.com>",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "e2e": "node test/e2e/runner.js",
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve --open",
+    "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
-    "bootstrap": "4.3.1",
-    "bootstrap-vue": "2.0.0-rc.15",
-    "chart.js": "2.8.0",
-    "core-js": "2.6.5",
-    "flatpickr": "4.5.7",
-    "nouislider": "13.1.4",
-    "register-service-worker": "1.6.2",
-    "vue": "2.6.6",
-    "vue-chartjs": "3.4.2",
-    "vue-clipboard2": "0.3.0",
-    "vue-flatpickr-component": "8.1.2",
-    "vue-router": "3.0.1",
-    "vue2-transitions": "0.3.0"
+    "chart.js": "^2.7.3",
+    "register-service-worker": "^1.5.2",
+    "vue": "^2.6.6",
+    "vue-chartjs": "^3.4.0",
+    "vue-i18n": "^8.8.1",
+    "vue-router": "^3.0.2",
+    "vue-router-prefetch": "^1.4.0",
+    "vue2-transitions": "^0.2.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-plugin-pwa": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-plugin-pwa": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "2.6.6"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+    "vue-cli-plugin-i18n": "^0.5.1",
+    "vue-template-compiler": "^2.6.6"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not ie <= 8"
+    "not ie <= 11"
   ]
 }

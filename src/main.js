@@ -1,30 +1,33 @@
-/*!
+/*
+ =========================================================
+ * Vue Black Dashboard - v1.1.0
+ =========================================================
 
-=========================================================
-* Vue Argon Dashboard - v1.0.0
-=========================================================
+ * Product Page: https://www.creative-tim.com/product/black-dashboard
+ * Copyright 2018 Creative Tim (http://www.creative-tim.com)
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+ =========================================================
 
-* Coded by Creative Tim
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-=========================================================
+ */
+import Vue from "vue";
+import VueRouter from "vue-router";
+import RouterPrefetch from 'vue-router-prefetch'
+import App from "./App";
+// TIP: change to import router from "./router/starterRouter"; to start with a clean layout
+import router from "./router/index";
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import BlackDashboard from "./plugins/blackDashboard";
+import i18n from "./i18n"
 import './registerServiceWorker'
-import ArgonDashboard from './plugins/argon-dashboard'
+Vue.use(BlackDashboard);
+Vue.use(VueRouter);
+Vue.use(RouterPrefetch);
 
-Vue.config.productionTip = false
-
-Vue.use(ArgonDashboard)
+/* eslint-disable no-new */
 new Vue({
   router,
+  i18n,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");

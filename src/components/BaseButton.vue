@@ -1,22 +1,25 @@
 <template>
-    <component :is="tag"
-               :type="tag === 'button' ? nativeType: ''"
-               @click="handleClick"
-               class="btn"
-               :class="classes">
-    <span class="btn-inner--icon" v-if="$slots.icon || icon && $slots.default">
-      <slot name="icon">
-        <i :class="icon"></i>
-      </slot>
-    </span>
-        <i v-if="!$slots.default" :class="icon"></i>
-        <span class="btn-inner--text" v-if="$slots.icon || icon && $slots.default">
-          <slot>
-            {{text}}
-          </slot>
-    </span>
-        <slot v-if="!$slots.icon && !icon"></slot>
-    </component>
+  <component
+    :is="tag"
+    :type="tag === 'button' ? nativeType : ''"
+    :disabled="disabled || loading"
+    @click="handleClick"
+    class="btn"
+    :class="[
+      {'btn-round': round},
+      {'btn-block': block},
+      {'btn-icon btn-fab': icon},
+      {[`btn-${type}`]: type},
+      {[`btn-${size}`]: size},
+      {'btn-simple': simple},
+      {'btn-link': link},
+      {'disabled': disabled && tag !== 'button'}
+    ]">
+    <slot name="loading">
+      <i v-if="loading" class="fas fa-spinner fa-spin"></i>
+    </slot>
+    <slot></slot>
+  </component>
 </template>
 <script>
 export default {
@@ -25,75 +28,36 @@ export default {
     tag: {
       type: String,
       default: "button",
-      description: "Button tag (default -> button)"
+      description: "Button html tag"
     },
+    round: Boolean,
+    icon: Boolean,
+    block: Boolean,
+    loading: Boolean,
+    disabled: Boolean,
     type: {
       type: String,
       default: "default",
-      description: "Button type (e,g primary, danger etc)"
-    },
-    size: {
-      type: String,
-      default: "",
-      description: "Button size lg|sm"
-    },
-    textColor: {
-      type: String,
-      default: "",
-      description: "Button text color (e.g primary, danger etc)"
+      description: "Button type (primary|secondary|danger etc)"
     },
     nativeType: {
       type: String,
       default: "button",
-      description: "Button native type (e.g submit,button etc)"
+      description: "Button native type (e.g button, input etc)"
     },
-    icon: {
+    size: {
       type: String,
       default: "",
-      description: "Button icon"
+      description: "Button size (sm|lg)"
     },
-    text: {
-      type: String,
-      default: "",
-      description: "Button text in case not provided via default slot"
-    },
-    outline: {
+    simple: {
       type: Boolean,
-      default: false,
-      description: "Whether button style is outline"
+      description: "Whether button is simple (outlined)"
     },
-    rounded: {
+    link: {
       type: Boolean,
-      default: false,
-      description: "Whether button style is rounded"
+      description: "Whether button is a link (no borders or background)"
     },
-    iconOnly: {
-      type: Boolean,
-      default: false,
-      description: "Whether button contains only an icon"
-    },
-    block: {
-      type: Boolean,
-      default: false,
-      description: "Whether button is of block type"
-    }
-  },
-  computed: {
-    classes() {
-      let btnClasses = [
-        { "btn-block": this.block },
-        { "rounded-circle": this.rounded },
-        { "btn-icon-only": this.iconOnly },
-        { [`text-${this.textColor}`]: this.textColor },
-        { "btn-icon": this.icon || this.$slots.icon },
-        this.type && !this.outline ? `btn-${this.type}` : "",
-        this.outline ? `btn-outline-${this.type}` : ""
-      ];
-      if (this.size) {
-        btnClasses.push(`btn-${this.size}`);
-      }
-      return btnClasses;
-    }
   },
   methods: {
     handleClick(evt) {

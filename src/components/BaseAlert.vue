@@ -1,66 +1,54 @@
 <template>
-    <fade-transition>
-        <div class="alert" :class="[`alert-${type}`, {'alert-dismissible': dismissible}]" role="alert" v-if="visible">
-            <slot v-if="!dismissible">
-                <span v-if="icon" class="alert-inner--icon">
-                    <i :class="icon"></i>
-                </span>
-                <span v-if="$slots.text" class="alert-inner--text">
-                    <slot name="text"></slot>
-                </span>
-            </slot>
-            <template v-else>
-                <slot>
-                    <span v-if="icon" class="alert-inner--icon">
-                     <i :class="icon"></i>
-                    </span>
-                    <span v-if="$slots.text" class="alert-inner--text">
-                    <slot name="text"></slot>
-                </span>
-                </slot>
-                <slot name="dismiss-icon">
-                    <button type="button" data-dismiss="alert" aria-label="Close" class="close" @click="dismissAlert">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </slot>
-            </template>
-        </div>
-    </fade-transition>
+  <fade-transition>
+    <div v-if="visible" class="alert" :class="[`alert-${type}`, { 'alert-with-icon': withIcon }]" role="alert">
+      <slot v-if="!dismissible"></slot>
+      <div v-else class="container">
+        <slot></slot>
+        <slot name="dismiss-icon">
+          <button type="button" class="close" aria-label="Close" @click="dismissAlert">
+                  <span aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </span>
+          </button>
+        </slot>
+      </div>
+    </div>
+  </fade-transition>
 </template>
 <script>
-import { FadeTransition } from "vue2-transitions";
+  import { FadeTransition } from 'vue2-transitions';
 
-export default {
-  name: "base-alert",
-  components: {
-    FadeTransition
-  },
-  props: {
-    type: {
-      type: String,
-      default: "default",
-      description: "Alert type"
+  export default {
+    name: 'base-alert',
+    components: {
+      FadeTransition
     },
-    icon: {
-      type: String,
-      default: "",
-      description: "Alert icon. Will be overwritten by default slot"
+    props: {
+      type: {
+        type: String,
+        default: 'default',
+        description: 'Alert type'
+      },
+      dismissible: {
+        type: Boolean,
+        default: false,
+        description: 'Whether alert is dismissible (closeable)'
+      },
+      withIcon: {
+        type: Boolean,
+        default: false,
+        description: 'Whether alert contains icon'
+      }
     },
-    dismissible: {
-      type: Boolean,
-      default: false,
-      description: "Whether alert is closes when clicking"
-    }
-  },
-  data() {
-    return {
-      visible: true
-    };
-  },
-  methods: {
-    dismissAlert() {
-      this.visible = false;
+    data() {
+      return {
+        visible: true
+      }
+    },
+    methods: {
+      dismissAlert() {
+        this.visible = false;
+      }
     }
   }
-};
 </script>
