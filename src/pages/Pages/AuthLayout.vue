@@ -57,17 +57,7 @@
               <ul class="nav">
                 <li class="nav-item">
                   <a
-                    href="https://www.creative-tim.com"
-                    target="_blank"
-                    rel="noopener"
-                    class="nav-link"
-                  >
-                    Creative Tim
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="http://presentation.creative-tim.com"
+                    href="https://github.com/baloise-incubator"
                     target="_blank"
                     rel="noopener"
                     class="nav-link"
@@ -77,7 +67,7 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    href="http://blog.creative-tim.com"
+                    href="https://github.com/baloise-incubator"
                     target="_blank"
                     rel="noopener"
                     class="nav-link"
@@ -86,19 +76,12 @@
                   </a>
                 </li>
               </ul>
+              <div class="copyright">
+                &copy; {{ year }}, made with <i class="tim-icons icon-heart-2"></i> by
+                <a href="https://github.com/baloise-incubator" rel="noopener" target="_blank">the YAML Engineers</a>
+                for a better devops experience.
+              </div>
             </nav>
-            <div class="copyright">
-              &copy; {{ year }}, made with
-              <i class="tim-icons icon-heart-2"></i> by
-              <a href="https://binarcode.com" target="_blank">BinarCode</a> and
-              <a
-                href="https://www.creative-tim.com/?ref=pdf-vuejs"
-                target="_blank"
-                rel="noopener"
-                >Creative Tim</a
-              >
-              for a better web.
-            </div>
           </div>
         </footer>
       </div>
