@@ -72,8 +72,6 @@ const Login = () =>
   import(/* webpackChunkName: "pages" */ "src/pages/Pages/Login.vue");
 const Register = () =>
   import(/* webpackChunkName: "pages" */ "src/pages/Pages/Register.vue");
-const RTL = () =>
-  import(/* webpackChunkName: "pages" */ "src/pages/Pages/RTLPage.vue");
 const Lock = () =>
   import(/* webpackChunkName: "pages" */ "src/pages/Pages/Lock.vue");
 
@@ -227,11 +225,6 @@ let pagesMenu = {
       path: "timeline",
       name: "Timeline Page",
       components: { default: TimeLine },
-    },
-    {
-      path: "rtl",
-      name: "RTL Page",
-      components: { default: RTL },
     },
   ],
 };

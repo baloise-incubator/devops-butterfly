@@ -23,9 +23,6 @@
             :link="{ name: $t('sidebar.pricing'), path: '/pricing' }"
           ></sidebar-item>
           <sidebar-item
-            :link="{ name: $t('sidebar.rtl'), path: '/pages/rtl' }"
-          ></sidebar-item>
-          <sidebar-item
             :link="{ name: $t('sidebar.timeline'), path: '/pages/timeline' }"
           ></sidebar-item>
           <sidebar-item

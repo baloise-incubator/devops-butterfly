@@ -5,14 +5,14 @@
       <card type="chart">
         <template slot="header">
           <div class="row">
-            <div class="col-sm-6" :class="isRTL ? 'text-right' : 'text-left'">
+            <div class="col-sm-6" :class="'text-left'">
               <h5 class="card-category">Total shipments</h5>
               <h2 class="card-title">Performance</h2>
             </div>
             <div class="col-sm-6 d-flex d-sm-block">
               <div
                 class="btn-group btn-group-toggle"
-                :class="isRTL ? 'float-left' : 'float-right'"
+                :class="'float-right'"
                 data-toggle="buttons"
               >
                 <label
@@ -64,7 +64,7 @@
     </div>
 
     <!-- Small charts -->
-    <div class="col-lg-4" :class="{ 'text-right': isRTL }">
+    <div class="col-lg-4" >
       <card type="chart">
         <template slot="header">
           <h5 class="card-category">Total Shipments</h5>
@@ -84,7 +84,7 @@
         </div>
       </card>
     </div>
-    <div class="col-lg-4" :class="{ 'text-right': isRTL }">
+    <div class="col-lg-4" >
       <card type="chart">
         <template slot="header">
           <h5 class="card-category">Daily Sales</h5>
@@ -103,7 +103,7 @@
         </div>
       </card>
     </div>
-    <div class="col-lg-4" :class="{ 'text-right': isRTL }">
+    <div class="col-lg-4" >
       <card type="chart">
         <template slot="header">
           <h5 class="card-category">Completed tasks</h5>
@@ -123,7 +123,7 @@
       </card>
     </div>
     <div class="col-lg-5">
-      <card type="tasks" :header-classes="{ 'text-right': isRTL }">
+      <card type="tasks">
         <template slot="header">
           <h6 class="title d-inline">Tasks (5)</h6>
           <p class="card-category d-inline">Today</p>
@@ -131,7 +131,6 @@
             menu-on-right=""
             tag="div"
             title-classes="btn btn-link btn-icon"
-            :class="{ 'float-left': isRTL }"
           >
             <i slot="title" class="tim-icons icon-settings-gear-63"></i>
             <a class="dropdown-item" href="#pablo"> Action </a>
@@ -145,7 +144,7 @@
       </card>
     </div>
     <div class="col-lg-7">
-      <card class="card" :header-classes="{ 'text-right': isRTL }">
+      <card class="card">
         <h5 slot="header" class="card-title">Management table</h5>
         <div class="table-responsive"><user-table></user-table></div>
       </card>
@@ -317,12 +316,6 @@ export default {
     };
   },
   computed: {
-    enableRTL() {
-      return this.$route.query.enableRTL;
-    },
-    isRTL() {
-      return this.$rtl.isRTL;
-    },
     bigLineChartCategories() {
       return [{ name: 'Accounts', icon: 'tim-icons icon-single-02' }, { name: 'Purchases', icon: 'tim-icons icon-gift-2' }, { name: 'Sessions', icon: 'tim-icons icon-tap-02' }];
     }
@@ -343,17 +336,7 @@ export default {
   },
   mounted() {
     this.i18n = this.$i18n;
-    if (this.enableRTL) {
-      this.i18n.locale = 'en';
-      this.$rtl.enableRTL();
-    }
     this.initBigChart(0);
-  },
-  beforeDestroy() {
-    if (this.$rtl.isRTL) {
-      this.i18n.locale = 'en';
-      this.$rtl.disableRTL();
-    }
   }
 };
 </script>

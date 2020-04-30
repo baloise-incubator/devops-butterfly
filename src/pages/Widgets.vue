@@ -5,7 +5,6 @@
         <card
           type="tasks"
           class="text-left"
-          :header-classes="{ 'text-right': $rtl.isRTL }"
         >
           <template slot="header">
             <h6 class="title d-inline">Tasks (5)</h6>
@@ -15,7 +14,6 @@
               menu-on-right=""
               tag="div"
               title-classes="btn btn-link btn-icon"
-              :class="{ 'float-left': $rtl.isRTL }"
             >
               <i slot="title" class="tim-icons icon-settings-gear-63"></i>
               <a class="dropdown-item" href="#pablo">Action</a>
