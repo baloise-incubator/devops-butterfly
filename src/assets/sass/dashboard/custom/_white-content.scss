@@ -380,31 +380,6 @@
 
   }
 
-  //style for calendar
-
-  .fc-basic-view .fc-day-number, .fc-basic-view .fc-week-number {
-      padding: 2px;
-      color: $default;
-  }
-
-  .fc-unthemed .fc-today{
-    background: darken($light-bg,10%);
-  }
-
-  .fc-unthemed .fc-content, .fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-list-view, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody, .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead {
-        border-color: $calendar-gray;
-    }
-
-   .fc-prev-button, .fc-next-button{
-     color: $default;
-     &:hover{
-       color: $default;
-     }
-   }
-
-   .fc button.btn-primary:not([data-action]):hover, .fc button:not([data-action]):hover {
-     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-   }
 
    .full-page{
      background: $light-bg;

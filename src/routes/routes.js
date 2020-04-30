@@ -3,11 +3,6 @@ import AuthLayout from "src/pages/Pages/AuthLayout.vue";
 // GeneralViews
 import NotFound from "src/pages/GeneralViews/NotFoundPage.vue";
 
-// Calendar
-const Calendar = () =>
-  import(
-    /* webpackChunkName: "extra" */ "src/pages/Calendar/CalendarRoute.vue"
-  );
 // Charts
 const Charts = () =>
   import(/* webpackChunkName: "dashboard" */ "src/pages/Charts.vue");
@@ -279,11 +274,6 @@ const routes = [
         path: "dashboard",
         name: "Dashboard",
         components: { default: Dashboard },
-      },
-      {
-        path: "calendar",
-        name: "Calendar",
-        components: { default: Calendar },
       },
       {
         path: "charts",

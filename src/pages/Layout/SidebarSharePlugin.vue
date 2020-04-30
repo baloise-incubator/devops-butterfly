@@ -39,33 +39,6 @@
             <span class="label-switch label-right">DARK MODE</span>
           </div>
         </li>
-
-        <li class="button-container mt-4">
-          <a
-            href="https://demos.creative-tim.com/vue-black-dashboard-pro/documentation"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-default btn-block btn-round"
-          >
-            Documentation
-          </a>
-          <a
-            href="https://creative-tim.com/product/vue-black-dashboard-pro"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-primary btn-block btn-round"
-          >
-            Buy for $59
-          </a>
-          <a
-            href="https://demos.creative-tim.com/vue-black-dashboard"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-info btn-block btn-round"
-          >
-            Free Version
-          </a>
-        </li>
       </ul>
     </div>
   </div>

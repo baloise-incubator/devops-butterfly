@@ -166,13 +166,6 @@
             path: '/charts'
           }"
         ></sidebar-item>
-        <sidebar-item
-          :link="{
-            name: $t('sidebar.calendar'),
-            icon: 'tim-icons icon-time-alarm',
-            path: '/calendar'
-          }"
-        ></sidebar-item>
       </template>
     </side-bar>
     <!--Share plugin (for demo purposes). You can remove it if don't plan on using it-->
