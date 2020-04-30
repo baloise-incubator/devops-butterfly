@@ -27,65 +27,65 @@
   </div>
 </template>
 <script>
-  import { CollapseTransition } from 'vue2-transitions';
+import { CollapseTransition } from 'vue2-transitions';
 
-  export default {
-    name: 'collapse-item',
-    components: {
-      CollapseTransition
+export default {
+  name: 'collapse-item',
+  components: {
+    CollapseTransition
+  },
+  props: {
+    title: {
+      type: String,
+      default: ''
     },
-    props: {
-      title: {
-        type: String,
-        default: ''
-      },
-      id: String
+    id: String
+  },
+  inject: {
+    animationDuration: {
+      default: 250
     },
-    inject: {
-      animationDuration: {
-        default: 250
-      },
-      multipleActive: {
-        default: false
-      },
-      addItem: {
-        default: () => {}
-      },
-      removeItem: {
-        default: () => {}
-      },
-      deactivateAll: {
-        default: () => {}
-      }
+    multipleActive: {
+      default: false
     },
-    computed: {
-      itemId() {
-        return this.id || this.title;
-      }
+    addItem: {
+      default: () => {}
     },
-    data() {
-      return {
-        active: false
-      };
+    removeItem: {
+      default: () => {}
     },
-    methods: {
-      activate() {
-        let wasActive = this.active;
-        if (!this.multipleActive) {
-          this.deactivateAll();
-        }
-        this.active = !wasActive;
-      }
-    },
-    mounted() {
-      this.addItem(this);
-    },
-    destroyed() {
-      if (this.$el && this.$el.parentNode) {
-        this.$el.parentNode.removeChild(this.$el);
-      }
-      this.removeItem(this);
+    deactivateAll: {
+      default: () => {}
     }
-  };
+  },
+  computed: {
+    itemId() {
+      return this.id || this.title;
+    }
+  },
+  data() {
+    return {
+      active: false
+    };
+  },
+  methods: {
+    activate() {
+      let wasActive = this.active;
+      if (!this.multipleActive) {
+        this.deactivateAll();
+      }
+      this.active = !wasActive;
+    }
+  },
+  mounted() {
+    this.addItem(this);
+  },
+  destroyed() {
+    if (this.$el && this.$el.parentNode) {
+      this.$el.parentNode.removeChild(this.$el);
+    }
+    this.removeItem(this);
+  }
+};
 </script>
 <style></style>

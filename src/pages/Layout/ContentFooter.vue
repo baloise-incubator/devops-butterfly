@@ -40,7 +40,7 @@
           href="https://www.creative-tim.com/?ref=pdf-vuejs"
           target="_blank"
           rel="noopener"
-        >Creative Tim</a
+          >Creative Tim</a
         >
         for a better web.
       </div>
@@ -48,12 +48,12 @@
   </footer>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        year: new Date().getFullYear()
-      };
-    }
-  };
+export default {
+  data() {
+    return {
+      year: new Date().getFullYear()
+    };
+  }
+};
 </script>
 <style></style>

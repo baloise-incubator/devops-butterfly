@@ -53,67 +53,67 @@
   </base-table>
 </template>
 <script>
-  import { BaseTable, BaseProgress } from '@/components';
+import { BaseTable, BaseProgress } from '@/components';
 
-  export default {
-    components: {
-      BaseTable,
-      BaseProgress
-    },
-    data() {
-      return {
-        table: [
-          {
-            id: 1,
-            img: 'img/tania.jpg',
-            name: 'Tania Mike',
-            job: 'Develop',
-            progress: 25,
-            salary: '€ 99,225'
-          },
-          {
-            id: 2,
-            img: 'img/robi.jpg',
-            name: 'John Doe',
-            job: 'CEO',
-            progress: 77,
-            salary: '€ 89,241'
-          },
-          {
-            id: 3,
-            img: 'img/lora.jpg',
-            name: 'Alexa Mike',
-            job: 'Design',
-            progress: 41,
-            salary: '€ 92,144'
-          },
-          {
-            id: 4,
-            img: 'img/jana.jpg',
-            name: 'Jana Monday',
-            job: 'Marketing',
-            progress: 50,
-            salary: '€ 49,990'
-          },
-          {
-            id: 5,
-            img: 'img/mike.jpg',
-            name: 'Paul Dickens',
-            job: 'Develop',
-            progress: 100,
-            salary: '€ 69,201'
-          },
-          {
-            id: 6,
-            img: 'img/emilyz.jpg',
-            name: 'Manuela Rico',
-            job: 'Manager',
-            progress: 15,
-            salary: '€ 99,201'
-          }
-        ]
-      };
-    }
-  };
+export default {
+  components: {
+    BaseTable,
+    BaseProgress
+  },
+  data() {
+    return {
+      table: [
+        {
+          id: 1,
+          img: 'img/tania.jpg',
+          name: 'Tania Mike',
+          job: 'Develop',
+          progress: 25,
+          salary: '€ 99,225'
+        },
+        {
+          id: 2,
+          img: 'img/robi.jpg',
+          name: 'John Doe',
+          job: 'CEO',
+          progress: 77,
+          salary: '€ 89,241'
+        },
+        {
+          id: 3,
+          img: 'img/lora.jpg',
+          name: 'Alexa Mike',
+          job: 'Design',
+          progress: 41,
+          salary: '€ 92,144'
+        },
+        {
+          id: 4,
+          img: 'img/jana.jpg',
+          name: 'Jana Monday',
+          job: 'Marketing',
+          progress: 50,
+          salary: '€ 49,990'
+        },
+        {
+          id: 5,
+          img: 'img/mike.jpg',
+          name: 'Paul Dickens',
+          job: 'Develop',
+          progress: 100,
+          salary: '€ 69,201'
+        },
+        {
+          id: 6,
+          img: 'img/emilyz.jpg',
+          name: 'Manuela Rico',
+          job: 'Manager',
+          progress: 15,
+          salary: '€ 99,201'
+        }
+      ]
+    };
+  }
+};
 </script>
 <style></style>

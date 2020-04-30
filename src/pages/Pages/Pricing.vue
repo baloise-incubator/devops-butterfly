@@ -135,13 +135,13 @@
   </div>
 </template>
 <script>
-  import { BaseProgress } from '../../components';
+import { BaseProgress } from 'src/components';
 
-  export default {
-    name: 'pricing-page',
-    components: {
-      BaseProgress
-    }
-  };
+export default {
+  name: 'pricing-page',
+  components: {
+    BaseProgress
+  }
+};
 </script>
 <style></style>

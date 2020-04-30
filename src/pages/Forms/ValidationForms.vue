@@ -19,40 +19,40 @@
   </div>
 </template>
 <script>
-  import RegisterForm from './ValidationForms/RegisterForm.vue';
-  import LoginForm from './ValidationForms/LoginForm.vue';
-  import TypeValidationForm from './ValidationForms/TypeValidationForm.vue';
-  import RangeValidationForm from './ValidationForms/RangeValidationForm';
+import RegisterForm from './ValidationForms/RegisterForm.vue';
+import LoginForm from './ValidationForms/LoginForm.vue';
+import TypeValidationForm from './ValidationForms/TypeValidationForm.vue';
+import RangeValidationForm from './ValidationForms/RangeValidationForm';
 
-  export default {
-    components: {
-      RegisterForm,
-      LoginForm,
-      TypeValidationForm,
-      RangeValidationForm
+export default {
+  components: {
+    RegisterForm,
+    LoginForm,
+    TypeValidationForm,
+    RangeValidationForm
+  },
+  data() {
+    return {
+      registerModel: {},
+      loginModel: {},
+      typeValidationModel: {},
+      rangeValidationModel: {}
+    };
+  },
+  methods: {
+    onRegisterSubmit(model) {
+      this.registerModel = model;
     },
-    data() {
-      return {
-        registerModel: {},
-        loginModel: {},
-        typeValidationModel: {},
-        rangeValidationModel: {}
-      };
+    onLoginSubmit(model) {
+      this.loginModel = model;
     },
-    methods: {
-      onRegisterSubmit(model) {
-        this.registerModel = model;
-      },
-      onLoginSubmit(model) {
-        this.loginModel = model;
-      },
-      onTypeValidationSubmit(model) {
-        this.typeValidationModel = model;
-      },
-      onRangeValidationSubmit(model) {
-        this.rangeValidationModel = model;
-      }
+    onTypeValidationSubmit(model) {
+      this.typeValidationModel = model;
+    },
+    onRangeValidationSubmit(model) {
+      this.rangeValidationModel = model;
     }
-  };
+  }
+};
 </script>
 <style></style>

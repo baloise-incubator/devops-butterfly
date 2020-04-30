@@ -12,7 +12,7 @@
               <base-button type="primary">Primary</base-button>
               <base-button type="info">Info</base-button>&nbsp; <br />
               <base-button type="success" class="animation-on-hover"
-              >Success</base-button
+                >Success</base-button
               >&nbsp; <base-button type="warning">Warning</base-button>&nbsp;
               <base-button type="danger">Danger</base-button>&nbsp;
             </div>
@@ -473,18 +473,18 @@
   </div>
 </template>
 <script>
-  import { BasePagination } from 'src/components';
+import { BasePagination } from 'src/components';
 
-  export default {
-    components: {
-      BasePagination
-    },
-    data() {
-      return {
-        defaultPagination: 1,
-        infoPagination: 3
-      };
-    }
-  };
+export default {
+  components: {
+    BasePagination
+  },
+  data() {
+    return {
+      defaultPagination: 1,
+      infoPagination: 3
+    };
+  }
+};
 </script>
 <style></style>

@@ -93,32 +93,32 @@
   </div>
 </template>
 <script>
-  import { BaseCheckbox } from '../../components';
+import { BaseCheckbox } from 'src/components';
 
-  export default {
-    components: {
-      BaseCheckbox
+export default {
+  components: {
+    BaseCheckbox
+  },
+  data() {
+    return {
+      model: {
+        email: '',
+        fullName: '',
+        password: ''
+      }
+    };
+  },
+  methods: {
+    getError(fieldName) {
+      return this.errors.first(fieldName);
     },
-    data() {
-      return {
-        model: {
-          email: '',
-          fullName: '',
-          password: ''
-        }
-      };
-    },
-    methods: {
-      getError(fieldName) {
-        return this.errors.first(fieldName);
-      },
-      async register() {
-        let isValidForm = await this.$validator.validateAll();
-        if (isValidForm) {
-          // TIP use this.model to send it to api and perform register call
-        }
+    async register() {
+      let isValidForm = await this.$validator.validateAll();
+      if (isValidForm) {
+        // TIP use this.model to send it to api and perform register call
       }
     }
-  };
+  }
+};
 </script>
 <style></style>

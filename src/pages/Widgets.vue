@@ -92,7 +92,7 @@
               badge-icon="tim-icons icon-gift-2"
             >
               <span slot="header" class="badge badge-success"
-              >Another Title</span
+                >Another Title</span
               >
               <p slot="content">
                 Thank God for the support of my wife and real friends. I also
@@ -212,28 +212,28 @@
   </div>
 </template>
 <script>
-  import TaskList from './Dashboard/TaskList';
-  import {
+import TaskList from './Dashboard/TaskList';
+import {
+  BaseSwitch,
+  TimeLine,
+  TimeLineItem,
+  BaseCheckbox
+} from 'src/components';
+
+export default {
+  components: {
     BaseSwitch,
     TimeLine,
     TimeLineItem,
+    TaskList,
     BaseCheckbox
-  } from '../components';
-
-  export default {
-    components: {
-      BaseSwitch,
-      TimeLine,
-      TimeLineItem,
-      TaskList,
-      BaseCheckbox
-    },
-    data() {
-      return {
-        allContributions: true,
-        pastWeekContributions: false
-      };
-    }
-  };
+  },
+  data() {
+    return {
+      allContributions: true,
+      pastWeekContributions: false
+    };
+  }
+};
 </script>
 <style></style>

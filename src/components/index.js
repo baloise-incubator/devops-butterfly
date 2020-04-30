@@ -8,7 +8,6 @@ import BaseSwitch from './BaseSwitch.vue';
 import Badge from './Badge';
 import BaseProgress from './BaseProgress.vue';
 import BaseButton from './BaseButton.vue';
-import CloseButton from './CloseButton.vue';
 
 import BaseDropdown from './BaseDropdown.vue';
 import BaseTable from './BaseTable.vue';
@@ -44,7 +43,6 @@ import AnimatedNumber from './AnimatedNumber';
 export {
   BaseCheckbox,
   IconCheckbox,
-  CloseButton,
   BaseSwitch,
   Badge,
   BaseAlert,

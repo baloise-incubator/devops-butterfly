@@ -1,43 +1,71 @@
-import Sidebar from './SideBar.vue';
-import SidebarItem from './SidebarItem.vue';
+import Notifications from './Notifications.vue';
 
-const SidebarStore = {
-  showSidebar: false,
-  sidebarLinks: [],
-  isMinimized: false,
-  displaySidebar(value) {
-    this.showSidebar = value;
+const NotificationStore = {
+  state: [], // here the notifications will be added
+  settings: {
+    overlap: false,
+    verticalAlign: 'top',
+    horizontalAlign: 'right',
+    type: 'info',
+    timeout: 5000,
+    closeOnClick: true,
+    showClose: true,
+    order: 'reverse' // normal | reverse (When reverse, each notification will be added on top)
   },
-  toggleMinimize() {
-    document.body.classList.toggle('sidebar-mini');
-    // we simulate the window Resize so the charts will get updated in realtime.
-    const simulateWindowResize = setInterval(() => {
-      window.dispatchEvent(new Event('resize'));
-    }, 180);
-
-    // we stop the simulation of Window Resize after the animations are completed
-    setTimeout(() => {
-      clearInterval(simulateWindowResize);
-    }, 1000);
-
-    this.isMinimized = !this.isMinimized;
+  setOptions(options) {
+    this.settings = Object.assign(this.settings, options);
+  },
+  removeNotification(timestamp) {
+    const indexToDelete = this.state.findIndex(n => n.timestamp === timestamp);
+    if (indexToDelete !== -1) {
+      this.state.splice(indexToDelete, 1);
+    }
+  },
+  addNotification(notification) {
+    if (typeof notification === 'string' || notification instanceof String) {
+      notification = { message: notification };
+    }
+    notification.timestamp = new Date();
+    notification.timestamp.setMilliseconds(
+      notification.timestamp.getMilliseconds() + this.state.length
+    );
+    notification = Object.assign({}, this.settings, notification);
+    if (this.settings.order === 'reverse') {
+      this.state.unshift(notification)
+    } else {
+      this.state.push(notification)
+    }
+  },
+  notify(notification) {
+    if (Array.isArray(notification)) {
+      notification.forEach(notificationInstance => {
+        this.addNotification(notificationInstance);
+      });
+    } else {
+      this.addNotification(notification);
+    }
   }
 };
 
-const SidebarPlugin = {
+const NotificationsPlugin = {
   install(Vue, options) {
-    if (options && options.sidebarLinks) {
-      SidebarStore.sidebarLinks = options.sidebarLinks;
-    }
     let app = new Vue({
       data: {
-        sidebarStore: SidebarStore
+        notificationStore: NotificationStore
+      },
+      methods: {
+        notify(notification) {
+          this.notificationStore.notify(notification);
+        }
       }
     });
-    Vue.prototype.$sidebar = app.sidebarStore;
-    Vue.component('side-bar', Sidebar);
-    Vue.component('sidebar-item', SidebarItem);
+    Vue.prototype.$notify = app.notify;
+    Vue.prototype.$notifications = app.notificationStore;
+    Vue.component('Notifications', Notifications);
+    if (options) {
+      NotificationStore.setOptions(options);
+    }
   }
 };
 
-export default SidebarPlugin;
+export default NotificationsPlugin;

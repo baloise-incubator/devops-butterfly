@@ -45,35 +45,35 @@
   </div>
 </template>
 <script>
-  import FirstStep from './Wizard/FirstStep.vue';
-  import SecondStep from './Wizard/SecondStep.vue';
-  import ThirdStep from './Wizard/ThirdStep.vue';
-  import swal from 'sweetalert2';
-  import { SimpleWizard, WizardTab } from '../../components';
+import FirstStep from './Wizard/FirstStep.vue';
+import SecondStep from './Wizard/SecondStep.vue';
+import ThirdStep from './Wizard/ThirdStep.vue';
+import swal from 'sweetalert2';
+import { SimpleWizard, WizardTab } from 'src/components';
 
-  export default {
-    data() {
-      return {
-        wizardModel: {}
-      };
+export default {
+  data() {
+    return {
+      wizardModel: {}
+    };
+  },
+  components: {
+    FirstStep,
+    SecondStep,
+    ThirdStep,
+    SimpleWizard,
+    WizardTab
+  },
+  methods: {
+    validateStep(ref) {
+      return this.$refs[ref].validate();
     },
-    components: {
-      FirstStep,
-      SecondStep,
-      ThirdStep,
-      SimpleWizard,
-      WizardTab
+    onStepValidated(validated, model) {
+      this.wizardModel = { ...this.wizardModel, ...model };
     },
-    methods: {
-      validateStep(ref) {
-        return this.$refs[ref].validate();
-      },
-      onStepValidated(validated, model) {
-        this.wizardModel = { ...this.wizardModel, ...model };
-      },
-      wizardComplete() {
-        swal('Good job!', 'You clicked the finish button!', 'success');
-      }
+    wizardComplete() {
+      swal('Good job!', 'You clicked the finish button!', 'success');
     }
-  };
+  }
+};
 </script>

@@ -818,8 +818,8 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'icons'
-  };
+export default {
+  name: 'icons'
+};
 </script>
 <style></style>

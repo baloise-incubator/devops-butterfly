@@ -27,69 +27,69 @@
 </template>
 
 <script>
-  import { Tag } from 'element-ui';
+import { Tag } from 'element-ui';
 
-  export default {
-    name: 'tags-input',
-    components: {
-      [Tag.name]: Tag
+export default {
+  name: 'tags-input',
+  components: {
+    [Tag.name]: Tag
+  },
+  props: {
+    value: {
+      type: Array,
+      default: () => [],
+      description: 'List of tags'
     },
-    props: {
-      value: {
-        type: Array,
-        default: () => [],
-        description: 'List of tags'
-      },
-      tagType: {
-        type: String,
-        default: 'primary',
-        description: 'Tag type (primary|danger etc)'
-      }
-    },
-    model: {
-      prop: 'value',
-      event: 'change'
-    },
-    data() {
-      return {
-        dynamicTags: [],
-        inputVisible: false,
-        inputValue: ''
-      };
-    },
-    methods: {
-      handleClose(tag) {
-        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
-        this.$emit('change', this.dynamicTags);
-      },
-      showInput() {
-        this.inputVisible = true;
-        this.$nextTick(() => {
-          this.$refs.saveTagInput.$refs.input.focus();
-        });
-      },
-
-      handleInputConfirm() {
-        let inputValue = this.inputValue;
-        if (inputValue) {
-          this.dynamicTags.push(inputValue);
-          this.$emit('change', this.dynamicTags);
-        }
-        this.inputVisible = false;
-        this.inputValue = '';
-      },
-      onInput(evt) {
-        this.$emit('input', evt.target.value);
-      }
-    },
-    created() {
-      this.$watch(
-        'value',
-        newVal => {
-          this.dynamicTags = [...newVal];
-        },
-        { immediate: true }
-      );
+    tagType: {
+      type: String,
+      default: 'primary',
+      description: 'Tag type (primary|danger etc)'
     }
-  };
+  },
+  model: {
+    prop: 'value',
+    event: 'change'
+  },
+  data() {
+    return {
+      dynamicTags: [],
+      inputVisible: false,
+      inputValue: ''
+    };
+  },
+  methods: {
+    handleClose(tag) {
+      this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      this.$emit('change', this.dynamicTags);
+    },
+    showInput() {
+      this.inputVisible = true;
+      this.$nextTick(() => {
+        this.$refs.saveTagInput.$refs.input.focus();
+      });
+    },
+
+    handleInputConfirm() {
+      let inputValue = this.inputValue;
+      if (inputValue) {
+        this.dynamicTags.push(inputValue);
+        this.$emit('change', this.dynamicTags);
+      }
+      this.inputVisible = false;
+      this.inputValue = '';
+    },
+    onInput(evt) {
+      this.$emit('input', evt.target.value);
+    }
+  },
+  created() {
+    this.$watch(
+      'value',
+      newVal => {
+        this.dynamicTags = [...newVal];
+      },
+      { immediate: true }
+    );
+  }
+};
 </script>

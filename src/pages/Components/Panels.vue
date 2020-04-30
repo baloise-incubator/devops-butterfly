@@ -217,20 +217,20 @@
   </div>
 </template>
 <script>
-  import { TabPane, Tabs, Collapse, CollapseItem } from 'src/components';
+import { TabPane, Tabs, Collapse, CollapseItem } from 'src/components';
 
-  export default {
-    components: {
-      TabPane,
-      Tabs,
-      Collapse,
-      CollapseItem
-    },
-    data() {
-      return {
-        activeName: 'first'
-      };
-    }
-  };
+export default {
+  components: {
+    TabPane,
+    Tabs,
+    Collapse,
+    CollapseItem
+  },
+  data() {
+    return {
+      activeName: 'first'
+    };
+  }
+};
 </script>
 <style lang="scss"></style>

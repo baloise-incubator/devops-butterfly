@@ -68,7 +68,7 @@
         </template>
         <li class="nav-link">
           <a href="#" class="nav-item dropdown-item"
-          >Mike John responded to your email</a
+            >Mike John responded to your email</a
           >
         </li>
         <li class="nav-link">
@@ -76,7 +76,7 @@
         </li>
         <li class="nav-link">
           <a href="#" class="nav-item dropdown-item"
-          >Your friend Michael is in town</a
+            >Your friend Michael is in town</a
           >
         </li>
         <li class="nav-link">
@@ -116,58 +116,58 @@
   </base-nav>
 </template>
 <script>
-  import { CollapseTransition } from 'vue2-transitions';
-  import { BaseNav, Modal } from '@/components';
-  import SidebarToggleButton from './SidebarToggleButton';
+import { CollapseTransition } from 'vue2-transitions';
+import { BaseNav, Modal } from '@/components';
+import SidebarToggleButton from './SidebarToggleButton';
 
-  export default {
-    components: {
-      SidebarToggleButton,
-      CollapseTransition,
-      BaseNav,
-      Modal
+export default {
+  components: {
+    SidebarToggleButton,
+    CollapseTransition,
+    BaseNav,
+    Modal
+  },
+  computed: {
+    routeName() {
+      const { name } = this.$route;
+      return this.capitalizeFirstLetter(name);
     },
-    computed: {
-      routeName() {
-        const { name } = this.$route;
-        return this.capitalizeFirstLetter(name);
-      },
-      isRTL() {
-        return this.$rtl.isRTL;
-      }
-    },
-    data() {
-      return {
-        activeNotifications: false,
-        showMenu: false,
-        searchModalVisible: false,
-        searchQuery: ''
-      };
-    },
-    methods: {
-      capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      },
-      toggleNotificationDropDown() {
-        this.activeNotifications = !this.activeNotifications;
-      },
-      closeDropDown() {
-        this.activeNotifications = false;
-      },
-      toggleSidebar() {
-        this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
-      },
-      hideSidebar() {
-        this.$sidebar.displaySidebar(false);
-      },
-      toggleMenu() {
-        this.showMenu = !this.showMenu;
-      }
+    isRTL() {
+      return this.$rtl.isRTL;
     }
-  };
+  },
+  data() {
+    return {
+      activeNotifications: false,
+      showMenu: false,
+      searchModalVisible: false,
+      searchQuery: ''
+    };
+  },
+  methods: {
+    capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    },
+    toggleNotificationDropDown() {
+      this.activeNotifications = !this.activeNotifications;
+    },
+    closeDropDown() {
+      this.activeNotifications = false;
+    },
+    toggleSidebar() {
+      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+    },
+    hideSidebar() {
+      this.$sidebar.displaySidebar(false);
+    },
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
+    }
+  }
+};
 </script>
 <style scoped>
-  .top-navbar {
-    top: 0px;
-  }
+.top-navbar {
+  top: 0px;
+}
 </style>

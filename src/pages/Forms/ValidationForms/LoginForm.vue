@@ -42,7 +42,7 @@
           native-type="submit"
           @click.native.prevent="validate"
           type="primary"
-        >Login</base-button
+          >Login</base-button
         >
         <a href="javascript:void(0)" class="pull-right">Forgot password?</a>
       </template>
@@ -50,39 +50,39 @@
   </form>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        model: {
-          email: '',
-          password: '',
-          fullName: ''
-        },
-        modelValidations: {
-          fullName: {
-            required: true
-          },
-          email: {
-            required: true,
-            email: true
-          },
-          password: {
-            required: true,
-            min: 5
-          }
-        }
-      };
-    },
-    methods: {
-      getError(fieldName) {
-        return this.errors.first(fieldName);
+export default {
+  data() {
+    return {
+      model: {
+        email: '',
+        password: '',
+        fullName: ''
       },
-      validate() {
-        this.$validator.validateAll().then(isValid => {
-          this.$emit('on-submit', this.registerForm, isValid);
-        });
+      modelValidations: {
+        fullName: {
+          required: true
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        password: {
+          required: true,
+          min: 5
+        }
       }
+    };
+  },
+  methods: {
+    getError(fieldName) {
+      return this.errors.first(fieldName);
+    },
+    validate() {
+      this.$validator.validateAll().then(isValid => {
+        this.$emit('on-submit', this.registerForm, isValid);
+      });
     }
-  };
+  }
+};
 </script>
 <style></style>

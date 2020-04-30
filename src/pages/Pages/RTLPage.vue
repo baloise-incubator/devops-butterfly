@@ -206,37 +206,37 @@
   </div>
 </template>
 <script>
-  import TaskList from '../../pages/Dashboard/TaskList';
-  import {
+import TaskList from 'src/pages/Dashboard/TaskList';
+import {
+  BaseSwitch,
+  TimeLine,
+  TimeLineItem,
+  BaseCheckbox
+} from 'src/components';
+
+export default {
+  components: {
     BaseSwitch,
     TimeLine,
     TimeLineItem,
+    TaskList,
     BaseCheckbox
-  } from '../../components';
-
-  export default {
-    components: {
-      BaseSwitch,
-      TimeLine,
-      TimeLineItem,
-      TaskList,
-      BaseCheckbox
-    },
-    data() {
-      return {
-        allContributions: true,
-        pastWeekContributions: false
-      };
-    },
-    mounted() {
-      this.i18n = this.$i18n;
-      this.i18n.locale = 'ar';
-      this.$rtl.enableRTL();
-    },
-    beforeDestroy() {
-      this.i18n.locale = 'en';
-      this.$rtl.disableRTL();
-    }
-  };
+  },
+  data() {
+    return {
+      allContributions: true,
+      pastWeekContributions: false
+    };
+  },
+  mounted() {
+    this.i18n = this.$i18n;
+    this.i18n.locale = 'en';
+    this.$rtl.enableRTL();
+  },
+  beforeDestroy() {
+    this.i18n.locale = 'en';
+    this.$rtl.disableRTL();
+  }
+};
 </script>
 <style></style>

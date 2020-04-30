@@ -14,45 +14,45 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'base-checkbox',
+export default {
+  name: 'base-checkbox',
+  model: {
+    prop: 'checked'
+  },
+  props: {
+    checked: [Array, Boolean],
+    disabled: Boolean,
+    inline: Boolean,
+    hasError: Boolean
+  },
+  data() {
+    return {
+      cbId: '',
+      touched: false
+    };
+  },
+  computed: {
     model: {
-      prop: 'checked'
-    },
-    props: {
-      checked: [Array, Boolean],
-      disabled: Boolean,
-      inline: Boolean,
-      hasError: Boolean
-    },
-    data() {
-      return {
-        cbId: '',
-        touched: false
-      };
-    },
-    computed: {
-      model: {
-        get() {
-          return this.checked;
-        },
-        set(check) {
-          if (!this.touched) {
-            this.touched = true;
-          }
-          this.$emit('input', check);
-        }
+      get() {
+        return this.checked;
       },
-      inlineClass() {
-        if (this.inline) {
-          return `form-check-inline`;
+      set(check) {
+        if (!this.touched) {
+          this.touched = true;
         }
+        this.$emit('input', check);
       }
     },
-    created() {
-      this.cbId = Math.random()
-        .toString(16)
-        .slice(2);
+    inlineClass() {
+      if (this.inline) {
+        return `form-check-inline`;
+      }
     }
-  };
+  },
+  created() {
+    this.cbId = Math.random()
+      .toString(16)
+      .slice(2);
+  }
+};
 </script>

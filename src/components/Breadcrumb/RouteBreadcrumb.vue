@@ -18,21 +18,21 @@
 </template>
 
 <script>
-  import BreadCrumb from './Breadcrumb';
-  import BreadCrumbItem from './BreadcrumbItem';
+import BreadCrumb from './Breadcrumb';
+import BreadCrumbItem from './BreadcrumbItem';
 
-  export default {
-    name: 'route-breadcrumb',
-    components: {
-      BreadCrumb,
-      BreadCrumbItem
-    },
-    methods: {
-      getBreadName(route) {
-        return route.name;
-      }
+export default {
+  name: 'route-breadcrumb',
+  components: {
+    BreadCrumb,
+    BreadCrumbItem
+  },
+  methods: {
+    getBreadName(route) {
+      return route.name;
     }
-  };
+  }
+};
 </script>
 
 <style scoped></style>

@@ -5,13 +5,13 @@
       Simple yet flexible JavaScript charting for designers &amp; developers.
       Made by our friends from
       <a target="_blank" rel="noopener" href="https://vue-chartjs.org/"
-      >Vue Charts.js</a
+        >Vue Charts.js</a
       >. Please check
       <a
         target="_blank"
         rel="noopener"
         href="https://vue-chartjs.org/guide/#vue-single-file-components"
-      >the full documentation</a
+        >the full documentation</a
       >.
     </p>
     <div class="row mt-5">
@@ -154,153 +154,153 @@
   </div>
 </template>
 <script>
-  import LineChart from '../components/Charts/LineChart';
-  import BarChart from '../components/Charts/BarChart';
-  import PieChart from '../components/Charts/PieChart';
-  import config from '@/config';
-  import * as chartConfigs from '@/components/Charts/config';
+import LineChart from 'src/components/Charts/LineChart';
+import BarChart from 'src/components/Charts/BarChart';
+import PieChart from 'src/components/Charts/PieChart';
+import config from '@/config';
+import * as chartConfigs from '@/components/Charts/config';
 
-  export default {
-    components: {
-      LineChart,
-      BarChart,
-      PieChart
-    },
-    data() {
-      return {
-        lineChart1: {
-          chartData: {
-            labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-            datasets: [
-              {
-                label: 'Data',
-                fill: true,
-                borderColor: config.colors.primary,
-                borderWidth: 2,
-                borderDash: [],
-                borderDashOffset: 0.0,
-                pointBackgroundColor: config.colors.primary,
-                pointBorderColor: 'rgba(255,255,255,0)',
-                pointHoverBackgroundColor: '#be55ed',
-                pointBorderWidth: 20,
-                pointHoverRadius: 4,
-                pointHoverBorderWidth: 15,
-                pointRadius: 4,
-                data: [80, 100, 70, 80, 120, 80]
-              }
-            ]
-          },
-          extraOptions: chartConfigs.purpleChartOptions,
-          gradientColors: config.colors.primaryGradient,
-          gradientStops: [1, 0.4, 0]
+export default {
+  components: {
+    LineChart,
+    BarChart,
+    PieChart
+  },
+  data() {
+    return {
+      lineChart1: {
+        chartData: {
+          labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          datasets: [
+            {
+              label: 'Data',
+              fill: true,
+              borderColor: config.colors.primary,
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              pointBackgroundColor: config.colors.primary,
+              pointBorderColor: 'rgba(255,255,255,0)',
+              pointHoverBackgroundColor: '#be55ed',
+              pointBorderWidth: 20,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 15,
+              pointRadius: 4,
+              data: [80, 100, 70, 80, 120, 80]
+            }
+          ]
         },
-        lineChart2: {
-          chartData: {
-            labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-            datasets: [
-              {
-                label: 'Data',
-                fill: true,
-                borderColor: config.colors.info,
-                borderWidth: 2,
-                borderDash: [],
-                borderDashOffset: 0.0,
-                pointBackgroundColor: config.colors.info,
-                pointBorderColor: 'rgba(255,255,255,0)',
-                pointHoverBackgroundColor: '#2380f7',
-                pointBorderWidth: 20,
-                pointHoverRadius: 4,
-                pointHoverBorderWidth: 15,
-                pointRadius: 4,
-                data: [80, 100, 70, 80, 120, 80]
-              }
-            ]
-          },
-          extraOptions: chartConfigs.lineChartOptionsBlue
+        extraOptions: chartConfigs.purpleChartOptions,
+        gradientColors: config.colors.primaryGradient,
+        gradientStops: [1, 0.4, 0]
+      },
+      lineChart2: {
+        chartData: {
+          labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          datasets: [
+            {
+              label: 'Data',
+              fill: true,
+              borderColor: config.colors.info,
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              pointBackgroundColor: config.colors.info,
+              pointBorderColor: 'rgba(255,255,255,0)',
+              pointHoverBackgroundColor: '#2380f7',
+              pointBorderWidth: 20,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 15,
+              pointRadius: 4,
+              data: [80, 100, 70, 80, 120, 80]
+            }
+          ]
         },
-        barChart1: {
-          chartData: {
-            labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-            datasets: [
-              {
-                label: 'Data',
-                fill: true,
-                borderColor: config.colors.danger,
-                borderWidth: 2,
-                borderDash: [],
-                borderDashOffset: 0.0,
-                data: [80, 100, 70, 80, 120, 80]
-              }
-            ]
-          },
-          extraOptions: chartConfigs.barChartOptionsGradient,
-          gradientColors: config.colors.purpleGradient,
-          gradientStops: [1, 0]
+        extraOptions: chartConfigs.lineChartOptionsBlue
+      },
+      barChart1: {
+        chartData: {
+          labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          datasets: [
+            {
+              label: 'Data',
+              fill: true,
+              borderColor: config.colors.danger,
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              data: [80, 100, 70, 80, 120, 80]
+            }
+          ]
         },
-        barChart2: {
-          chartData: {
-            labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-            datasets: [
-              {
-                label: 'Data',
-                fill: true,
-                backgroundColor: config.colors.orange,
-                hoverBackgroundColor: config.colors.orange,
-                borderColor: config.colors.orange,
-                borderWidth: 2,
-                borderDash: [],
-                borderDashOffset: 0.0,
-                data: [80, 100, 70, 80, 120, 80]
-              },
-              {
-                label: 'Data',
-                fill: true,
-                backgroundColor: config.colors.info,
-                hoverBackgroundColor: config.colors.info,
-                borderColor: config.colors.info,
-                borderWidth: 2,
-                borderDash: [],
-                borderDashOffset: 0.0,
-                data: [60, 110, 90, 70, 90, 100]
-              }
-            ]
-          },
-          extraOptions: chartConfigs.barChartOptionsGradient
+        extraOptions: chartConfigs.barChartOptionsGradient,
+        gradientColors: config.colors.purpleGradient,
+        gradientStops: [1, 0]
+      },
+      barChart2: {
+        chartData: {
+          labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          datasets: [
+            {
+              label: 'Data',
+              fill: true,
+              backgroundColor: config.colors.orange,
+              hoverBackgroundColor: config.colors.orange,
+              borderColor: config.colors.orange,
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              data: [80, 100, 70, 80, 120, 80]
+            },
+            {
+              label: 'Data',
+              fill: true,
+              backgroundColor: config.colors.info,
+              hoverBackgroundColor: config.colors.info,
+              borderColor: config.colors.info,
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              data: [60, 110, 90, 70, 90, 100]
+            }
+          ]
         },
-        pieChart1: {
-          chartData: {
-            labels: [1, 2],
-            datasets: [
-              {
-                label: 'Emails',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                backgroundColor: ['#00c09d', '#e2e2e2'],
-                borderWidth: 0,
-                data: [60, 40]
-              }
-            ]
-          },
-          extraOptions: chartConfigs.pieChartOptions
+        extraOptions: chartConfigs.barChartOptionsGradient
+      },
+      pieChart1: {
+        chartData: {
+          labels: [1, 2],
+          datasets: [
+            {
+              label: 'Emails',
+              pointRadius: 0,
+              pointHoverRadius: 0,
+              backgroundColor: ['#00c09d', '#e2e2e2'],
+              borderWidth: 0,
+              data: [60, 40]
+            }
+          ]
         },
-        pieChart2: {
-          chartData: {
-            labels: [1, 2, 3],
-            datasets: [
-              {
-                label: 'Emails',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                backgroundColor: ['#ff8779', '#2a84e9', '#e2e2e2'],
-                borderWidth: 0,
-                data: [60, 40, 20]
-              }
-            ]
-          },
-          extraOptions: chartConfigs.pieChartOptions
-        }
-      };
-    }
-  };
+        extraOptions: chartConfigs.pieChartOptions
+      },
+      pieChart2: {
+        chartData: {
+          labels: [1, 2, 3],
+          datasets: [
+            {
+              label: 'Emails',
+              pointRadius: 0,
+              pointHoverRadius: 0,
+              backgroundColor: ['#ff8779', '#2a84e9', '#e2e2e2'],
+              borderWidth: 0,
+              data: [60, 40, 20]
+            }
+          ]
+        },
+        extraOptions: chartConfigs.pieChartOptions
+      }
+    };
+  }
+};
 </script>
 <style></style>

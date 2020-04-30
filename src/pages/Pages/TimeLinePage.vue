@@ -10,7 +10,7 @@
             badge-icon="tim-icons icon-planet"
           >
             <span slot="header" class="badge badge-pill badge-danger"
-            >Some title</span
+              >Some title</span
             >
             <p slot="content">
               Wifey made the best Father's Day meal ever. So thankful so happy
@@ -30,7 +30,7 @@
             badge-icon="tim-icons icon-user-run"
           >
             <span slot="header" class="badge badge-pill badge-success"
-            >Another Title</span
+              >Another Title</span
             >
             <p slot="content">
               Thank God for the support of my wife and real friends. I also
@@ -47,7 +47,7 @@
             badge-icon="tim-icons icon-notes"
           >
             <span slot="header" class="badge badge-pill badge-info"
-            >Another Title</span
+              >Another Title</span
             >
 
             <temlate slot="content">
@@ -78,7 +78,7 @@
             badge-icon="tim-icons icon-gift-2"
           >
             <span slot="header" class="badge badge-pill badge-warning"
-            >Another Title</span
+              >Another Title</span
             >
             <p slot="content">
               Tune into Big Boy's 92.3 I'm about to play the first single from
@@ -94,13 +94,13 @@
   </div>
 </template>
 <script>
-  import { TimeLine, TimeLineItem } from '../../components';
+import { TimeLine, TimeLineItem } from 'src/components';
 
-  export default {
-    components: {
-      TimeLine,
-      TimeLineItem
-    }
-  };
+export default {
+  components: {
+    TimeLine,
+    TimeLineItem
+  }
+};
 </script>
 <style></style>

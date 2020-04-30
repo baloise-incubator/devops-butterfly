@@ -65,47 +65,47 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        model: {
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          address: ''
-        },
-        modelValidations: {
-          firstName: {
-            required: true,
-            min: 5
-          },
-          lastName: {
-            required: true,
-            min: 5
-          },
-          email: {
-            required: true,
-            email: true
-          },
-          phone: {
-            required: true,
-            numeric: true
-          }
-        }
-      };
-    },
-    methods: {
-      getError(fieldName) {
-        return this.errors.first(fieldName);
+export default {
+  data() {
+    return {
+      model: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        address: ''
       },
-      validate() {
-        return this.$validator.validateAll().then(res => {
-          this.$emit('on-validated', res, this.model);
-          return res;
-        });
+      modelValidations: {
+        firstName: {
+          required: true,
+          min: 5
+        },
+        lastName: {
+          required: true,
+          min: 5
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        phone: {
+          required: true,
+          numeric: true
+        }
       }
+    };
+  },
+  methods: {
+    getError(fieldName) {
+      return this.errors.first(fieldName);
+    },
+    validate() {
+      return this.$validator.validateAll().then(res => {
+        this.$emit('on-validated', res, this.model);
+        return res;
+      });
     }
-  };
+  }
+};
 </script>
 <style></style>

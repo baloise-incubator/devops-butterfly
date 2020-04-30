@@ -9,28 +9,28 @@
   </div>
 </template>
 <script>
-  import { ImageUpload } from 'src/components';
+import { ImageUpload } from 'src/components';
 
-  export default {
-    components: {
-      ImageUpload
-    },
-    data() {
-      return {
-        model: {
-          file: null
-        }
-      };
-    },
-    methods: {
-      onFileChange(file) {
-        this.file = file;
-      },
-      validate() {
-        this.$emit('on-validated', true, this.model);
-        return Promise.resolve(true);
+export default {
+  components: {
+    ImageUpload
+  },
+  data() {
+    return {
+      model: {
+        file: null
       }
+    };
+  },
+  methods: {
+    onFileChange(file) {
+      this.file = file;
+    },
+    validate() {
+      this.$emit('on-validated', true, this.model);
+      return Promise.resolve(true);
     }
-  };
+  }
+};
 </script>
 <style></style>

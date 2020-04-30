@@ -53,32 +53,32 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        model: {
-          email: '',
-          password: '',
-          subscribe: true
-        }
-      };
+export default {
+  data() {
+    return {
+      model: {
+        email: '',
+        password: '',
+        subscribe: true
+      }
+    };
+  },
+  methods: {
+    getError(fieldName) {
+      return this.errors.first(fieldName);
     },
-    methods: {
-      getError(fieldName) {
-        return this.errors.first(fieldName);
-      },
-      async login() {
-        let isValidForm = await this.$validator.validateAll();
-        if (isValidForm) {
-          // TIP use this.model to send it to api and perform login call
-        }
+    async login() {
+      let isValidForm = await this.$validator.validateAll();
+      if (isValidForm) {
+        // TIP use this.model to send it to api and perform login call
       }
     }
-  };
+  }
+};
 </script>
 <style>
-  .navbar-nav .nav-item p {
-    line-height: inherit;
-    margin-left: 5px;
-  }
+.navbar-nav .nav-item p {
+  line-height: inherit;
+  margin-left: 5px;
+}
 </style>

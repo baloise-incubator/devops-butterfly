@@ -11,7 +11,7 @@ export default {
           return document.body.classList;
         },
         enableRTL() {
-          import('@/assets/sass/black-dashboard/custom/_rtl.scss')
+          import('@/assets/sass/vendor/bootstrap-rtl.scss')
           this.isRTL = true;
           this.getDocClasses().add('rtl');
           this.getDocClasses().add('menu-on-right');

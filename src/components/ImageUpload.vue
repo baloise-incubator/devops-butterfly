@@ -29,59 +29,59 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'image-upload',
-    props: {
-      type: {
-        type: String,
-        default: '',
-        description: 'Image upload type (""|avatar)'
-      },
-      src: {
-        type: String,
-        default: '',
-        description: 'Initial image to display'
-      },
-      selectText: {
-        type: String,
-        default: 'Select image'
-      },
-      changeText: {
-        type: String,
-        default: 'Change'
-      },
-      removeText: {
-        type: String,
-        default: 'Remove'
-      }
+export default {
+  name: 'image-upload',
+  props: {
+    type: {
+      type: String,
+      default: '',
+      description: 'Image upload type (""|avatar)'
     },
-    data() {
-      let avatarPlaceholder = 'https://demos.creative-tim.com/vue-black-dashboard-pro/img/placeholder.jpg';
-      let imgPlaceholder = 'https://demos.creative-tim.com/vue-black-dashboard-pro/img/image_placeholder.jpg';
-      return {
-        placeholder: this.type === 'avatar' ? avatarPlaceholder : imgPlaceholder,
-        imagePreview: null
-      };
+    src: {
+      type: String,
+      default: '',
+      description: 'Initial image to display'
     },
-    computed: {
-      fileExists() {
-        return this.imagePreview !== null;
-      },
-      image() {
-        return this.imagePreview || this.src || this.placeholder;
-      }
+    selectText: {
+      type: String,
+      default: 'Select image'
     },
-    methods: {
-      handlePreview(event) {
-        let file = event.target.files[0];
-        this.imagePreview = URL.createObjectURL(file);
-        this.$emit('change', file);
-      },
-      removeFile() {
-        this.imagePreview = null;
-        this.$emit('change', null);
-      }
+    changeText: {
+      type: String,
+      default: 'Change'
+    },
+    removeText: {
+      type: String,
+      default: 'Remove'
     }
-  };
+  },
+  data() {
+    let avatarPlaceholder = 'img/placeholder.jpg';
+    let imgPlaceholder = 'img/image_placeholder.jpg';
+    return {
+      placeholder: this.type === 'avatar' ? avatarPlaceholder : imgPlaceholder,
+      imagePreview: null
+    };
+  },
+  computed: {
+    fileExists() {
+      return this.imagePreview !== null;
+    },
+    image() {
+      return this.imagePreview || this.src || this.placeholder;
+    }
+  },
+  methods: {
+    handlePreview(event) {
+      let file = event.target.files[0];
+      this.imagePreview = URL.createObjectURL(file);
+      this.$emit('change', file);
+    },
+    removeFile() {
+      this.imagePreview = null;
+      this.$emit('change', null);
+    }
+  }
+};
 </script>
 <style></style>

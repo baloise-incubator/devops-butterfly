@@ -265,8 +265,8 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'grid-system'
-  };
+export default {
+  name: 'grid-system'
+};
 </script>
 <style></style>

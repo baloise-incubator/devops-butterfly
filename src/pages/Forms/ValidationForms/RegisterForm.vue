@@ -49,56 +49,56 @@
           native-type="submit"
           @click.prevent="validate"
           type="primary"
-        >Register</base-button
+          >Register</base-button
         >
       </template>
     </card>
   </form>
 </template>
 <script>
-  import { BaseCheckbox } from 'src/components/index';
+import { BaseCheckbox } from 'src/components/index';
 
-  export default {
-    components: {
-      BaseCheckbox
-    },
-    data() {
-      return {
-        model: {
-          email: '',
-          password: '',
-          confirmPassword: '',
-          subscribe: false
-        },
-        modelValidations: {
-          email: {
-            required: true,
-            email: true
-          },
-          password: {
-            required: true,
-            min: 5
-          },
-          confirmPassword: {
-            required: true,
-            confirmed: 'password'
-          },
-          subscribe: {
-            required: true
-          }
-        }
-      };
-    },
-    methods: {
-      getError(fieldName) {
-        return this.errors.first(fieldName);
+export default {
+  components: {
+    BaseCheckbox
+  },
+  data() {
+    return {
+      model: {
+        email: '',
+        password: '',
+        confirmPassword: '',
+        subscribe: false
       },
-      validate() {
-        this.$validator.validateAll().then(isValid => {
-          this.$emit('on-submit', this.registerForm, isValid);
-        });
+      modelValidations: {
+        email: {
+          required: true,
+          email: true
+        },
+        password: {
+          required: true,
+          min: 5
+        },
+        confirmPassword: {
+          required: true,
+          confirmed: 'password'
+        },
+        subscribe: {
+          required: true
+        }
       }
+    };
+  },
+  methods: {
+    getError(fieldName) {
+      return this.errors.first(fieldName);
+    },
+    validate() {
+      this.$validator.validateAll().then(isValid => {
+        this.$emit('on-submit', this.registerForm, isValid);
+      });
     }
-  };
+  }
+};
 </script>
 <style></style>

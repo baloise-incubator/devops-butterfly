@@ -43,7 +43,7 @@
             </base-input>
           </div>
           <label class="col-sm-3 label-on-right"
-          ><code>min_value="6", max_value="10"</code></label
+            ><code>min_value="6", max_value="10"</code></label
           >
         </div>
 
@@ -59,7 +59,7 @@
             </base-input>
           </div>
           <label class="col-sm-3 label-on-right"
-          ><code>min_value="6"</code></label
+            ><code>min_value="6"</code></label
           >
         </div>
 
@@ -75,7 +75,7 @@
             </base-input>
           </div>
           <label class="col-sm-3 label-on-right"
-          ><code>max_value="6"</code></label
+            ><code>max_value="6"</code></label
           >
         </div>
       </div>
@@ -84,58 +84,58 @@
           native-type="submit"
           @click.native.prevent="validate"
           type="primary"
-        >Validate inputs</base-button
+          >Validate inputs</base-button
         >
       </div>
     </card>
   </form>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        model: {
-          minLength: '',
-          maxLength: '',
-          range: '',
-          minValue: '',
-          maxValue: ''
-        },
-        modelValidations: {
-          minLength: {
-            required: true,
-            min: 5
-          },
-          maxLength: {
-            required: true,
-            max: 5
-          },
-          range: {
-            required: true,
-            min_value: 6,
-            max_value: 10
-          },
-          minValue: {
-            required: true,
-            min_value: 6
-          },
-          maxValue: {
-            required: true,
-            max_value: 6
-          }
-        }
-      };
-    },
-    methods: {
-      getError(fieldName) {
-        return this.errors.first(fieldName);
+export default {
+  data() {
+    return {
+      model: {
+        minLength: '',
+        maxLength: '',
+        range: '',
+        minValue: '',
+        maxValue: ''
       },
-      validate() {
-        this.$validator.validateAll().then(isValid => {
-          this.$emit('on-submit', this.model, isValid);
-        });
+      modelValidations: {
+        minLength: {
+          required: true,
+          min: 5
+        },
+        maxLength: {
+          required: true,
+          max: 5
+        },
+        range: {
+          required: true,
+          min_value: 6,
+          max_value: 10
+        },
+        minValue: {
+          required: true,
+          min_value: 6
+        },
+        maxValue: {
+          required: true,
+          max_value: 6
+        }
       }
+    };
+  },
+  methods: {
+    getError(fieldName) {
+      return this.errors.first(fieldName);
+    },
+    validate() {
+      this.$validator.validateAll().then(isValid => {
+        this.$emit('on-submit', this.model, isValid);
+      });
     }
-  };
+  }
+};
 </script>
 <style></style>

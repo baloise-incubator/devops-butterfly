@@ -1,40 +1,18 @@
-/*!
-
- =========================================================
- * Vue Black Dashboard PRO - v1.2.1
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/material-kit-pro
- * Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
- * Coded by Creative Tim
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueAnalytics from 'vue-analytics'
 import RouterPrefetch from 'vue-router-prefetch'
 import DashboardPlugin from './plugins/dashboard-plugin';
 import App from './App.vue';
 
 // router setup
-import router from './routes/router';
+import router from "./routes/router";
 import i18n from './i18n';
 import './registerServiceWorker'
 // plugin setup
 Vue.use(DashboardPlugin);
 Vue.use(VueRouter);
 Vue.use(RouterPrefetch);
-Vue.use(VueAnalytics, {
-  id: 'UA-46172202-9',
-  router,
-  autoTracking: {
-    pageviewOnLoad: false
-  }
-})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

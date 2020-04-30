@@ -2,9 +2,9 @@
   <div class="sidebar" :data="backgroundColor">
     <div class="sidebar-wrapper" ref="sidebarScrollArea">
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <router-link to="/dashboard" class="simple-text logo-mini">
           <img :src="logo" alt="app-logo" />
-        </a>
+        </router-link>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
           {{ title }}
         </a>
@@ -30,79 +30,79 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'sidebar',
-    props: {
-      title: {
-        type: String,
-        default: 'Creative Tim',
-        description: 'Sidebar title'
-      },
-      shortTitle: {
-        type: String,
-        default: 'CT',
-        description: 'Sidebar short title'
-      },
-      logo: {
-        type: String,
-        default: 'https://demos.creative-tim.com/vue-black-dashboard-pro/img/icon-vue.png',
-        description: 'Sidebar app logo'
-      },
-      backgroundColor: {
-        type: String,
-        default: 'vue',
-        validator: value => {
-          let acceptedValues = [
-            '',
-            'vue',
-            'blue',
-            'green',
-            'orange',
-            'red',
-            'primary'
-          ];
-          return acceptedValues.indexOf(value) !== -1;
-        },
-        description:
-          'Sidebar background color (vue|blue|green|orange|red|primary)'
-      },
-      sidebarLinks: {
-        type: Array,
-        default: () => [],
-        description:
-          "List of sidebar links as an array if you don't want to use components for these."
-      },
-      autoClose: {
-        type: Boolean,
-        default: true,
-        description:
-          'Whether sidebar should autoclose on mobile when clicking an item'
-      }
+export default {
+  name: 'sidebar',
+  props: {
+    title: {
+      type: String,
+      default: 'Creative Tim',
+      description: 'Sidebar title'
     },
-    provide() {
-      return {
-        autoClose: this.autoClose
-      };
+    shortTitle: {
+      type: String,
+      default: 'CT',
+      description: 'Sidebar short title'
     },
-    methods: {
-      minimizeSidebar() {
-        if (this.$sidebar) {
-          this.$sidebar.toggleMinimize();
-        }
-      }
+    logo: {
+      type: String,
+      default: require('@/assets/img/logo.png'),
+      description: 'Sidebar app logo'
     },
-    beforeDestroy() {
-      if (this.$sidebar.showSidebar) {
-        this.$sidebar.showSidebar = false;
+    backgroundColor: {
+      type: String,
+      default: 'vue',
+      validator: value => {
+        let acceptedValues = [
+          '',
+          'vue',
+          'blue',
+          'green',
+          'orange',
+          'red',
+          'primary'
+        ];
+        return acceptedValues.indexOf(value) !== -1;
+      },
+      description:
+        'Sidebar background color (vue|blue|green|orange|red|primary)'
+    },
+    sidebarLinks: {
+      type: Array,
+      default: () => [],
+      description:
+        "List of sidebar links as an array if you don't want to use components for these."
+    },
+    autoClose: {
+      type: Boolean,
+      default: true,
+      description:
+        'Whether sidebar should autoclose on mobile when clicking an item'
+    }
+  },
+  provide() {
+    return {
+      autoClose: this.autoClose
+    };
+  },
+  methods: {
+    minimizeSidebar() {
+      if (this.$sidebar) {
+        this.$sidebar.toggleMinimize();
       }
     }
-  };
-</script>
-<style>
-  @media (min-width: 992px) {
-    .navbar-search-form-mobile,
-    .nav-mobile-menu {
-      display: none;
+  },
+  beforeDestroy() {
+    if (this.$sidebar.showSidebar) {
+      this.$sidebar.showSidebar = false;
     }
   }
+};
+</script>
+<style>
+@media (min-width: 992px) {
+  .navbar-search-form-mobile,
+  .nav-mobile-menu {
+    display: none;
+  }
+}
 </style>

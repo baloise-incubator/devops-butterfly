@@ -29,35 +29,35 @@
 
         <base-alert type="primary" dismissible>
           <span
-          ><b> Primary - </b> This is a regular notification made with
+            ><b> Primary - </b> This is a regular notification made with
             ".alert-primary"</span
           >
         </base-alert>
 
         <base-alert type="info" dismissible>
           <span
-          ><b> Info - </b> This is a regular notification made with
+            ><b> Info - </b> This is a regular notification made with
             ".alert-info"</span
           >
         </base-alert>
 
         <base-alert type="success" dismissible>
           <span
-          ><b> Success - </b> This is a regular notification made with
+            ><b> Success - </b> This is a regular notification made with
             ".alert-success"</span
           >
         </base-alert>
 
         <base-alert type="warning" dismissible>
           <span
-          ><b> Warning - </b> This is a regular notification made with
+            ><b> Warning - </b> This is a regular notification made with
             ".alert-warning"</span
           >
         </base-alert>
 
         <base-alert type="danger" dismissible>
           <span
-          ><b> Danger - </b> This is a regular notification made with
+            ><b> Danger - </b> This is a regular notification made with
             ".alert-danger"</span
           >
         </base-alert>
@@ -82,7 +82,7 @@
                     type="primary"
                     block
                     @click.native="notifyVue('top', 'left')"
-                  >Top Left
+                    >Top Left
                   </base-button>
                 </div>
                 <div class="col-md-4">
@@ -90,7 +90,7 @@
                     type="primary"
                     block
                     @click.native="notifyVue('top', 'center')"
-                  >Top Center
+                    >Top Center
                   </base-button>
                 </div>
                 <div class="col-md-4">
@@ -98,7 +98,7 @@
                     type="primary"
                     block
                     @click.native="notifyVue('top', 'right')"
-                  >Top Right
+                    >Top Right
                   </base-button>
                 </div>
               </div>
@@ -112,7 +112,7 @@
                     type="primary"
                     block
                     @click.native="notifyVue('bottom', 'left')"
-                  >Bottom Left
+                    >Bottom Left
                   </base-button>
                 </div>
                 <div class="col-md-4">
@@ -120,7 +120,7 @@
                     type="primary"
                     block
                     @click.native="notifyVue('bottom', 'center')"
-                  >Bottom Center
+                    >Bottom Center
                   </base-button>
                 </div>
                 <div class="col-md-4">
@@ -128,7 +128,7 @@
                     type="primary"
                     block
                     @click.native="notifyVue('bottom', 'right')"
-                  >Bottom Right
+                    >Bottom Right
                   </base-button>
                 </div>
               </div>
@@ -172,7 +172,7 @@
                 <base-button
                   type="danger"
                   @click.native="modals.classic = false"
-                >Close
+                  >Close
                 </base-button>
               </template>
             </modal>
@@ -239,7 +239,7 @@
                   type="info"
                   round
                   @click.native="modals.notice = false"
-                >Sounds good!
+                  >Sounds good!
                 </base-button>
               </div>
             </modal>
@@ -262,7 +262,7 @@
                   type="neutral"
                   link
                   @click.native="modals.mini = false"
-                >Close
+                  >Close
                 </base-button>
               </template>
             </modal>
@@ -273,45 +273,45 @@
   </div>
 </template>
 <script>
-  import { Modal, BaseAlert } from 'src/components';
+import { Modal, BaseAlert } from 'src/components';
 
-  export default {
-    components: {
-      Modal,
-      BaseAlert
-    },
-    data() {
-      return {
-        type: ['', 'info', 'success', 'warning', 'danger'],
-        notifications: {
-          topCenter: false
-        },
-        modals: {
-          classic: false,
-          notice: false,
-          mini: false
-        }
-      };
-    },
-    methods: {
-      notifyVue(verticalAlign, horizontalAlign) {
-        let color = Math.floor(Math.random() * 4 + 1);
-        this.$notify({
-          message:
-            'Welcome to <b>Vue Black Dashboard Pro</b> - a beautiful resource for every web developer',
-          timeout: 30000,
-          icon: 'tim-icons icon-bell-55',
-          horizontalAlign: horizontalAlign,
-          verticalAlign: verticalAlign,
-          type: this.type[color]
-        });
+export default {
+  components: {
+    Modal,
+    BaseAlert
+  },
+  data() {
+    return {
+      type: ['', 'info', 'success', 'warning', 'danger'],
+      notifications: {
+        topCenter: false
+      },
+      modals: {
+        classic: false,
+        notice: false,
+        mini: false
       }
+    };
+  },
+  methods: {
+    notifyVue(verticalAlign, horizontalAlign) {
+      let color = Math.floor(Math.random() * 4 + 1);
+      this.$notify({
+        message:
+          'Welcome to <b>Vue Black Dashboard Pro</b> - a beautiful resource for every web developer',
+        timeout: 30000,
+        icon: 'tim-icons icon-bell-55',
+        horizontalAlign: horizontalAlign,
+        verticalAlign: verticalAlign,
+        type: this.type[color]
+      });
     }
-  };
+  }
+};
 </script>
 <style>
-  .card .alert {
-    position: relative !important;
-    width: 100%;
-  }
+.card .alert {
+  position: relative !important;
+  width: 100%;
+}
 </style>

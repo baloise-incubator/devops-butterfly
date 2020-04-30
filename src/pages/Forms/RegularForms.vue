@@ -17,7 +17,7 @@
               <base-checkbox>Subscribe to newsletter</base-checkbox>
             </div>
             <base-button class="mt-3" native-type="submit" type="primary"
-            >Submit</base-button
+              >Submit</base-button
             >
           </div>
         </form>
@@ -77,7 +77,7 @@
               <div class="col-sm-10">
                 <base-input placeholder="Enter email">
                   <span slot="helpBlock" class="form-text"
-                  >A block of help text that breaks onto a new line.
+                    >A block of help text that breaks onto a new line.
                   </span>
                 </base-input>
               </div>
@@ -116,21 +116,21 @@
 
             <div class="row">
               <label class="col-sm-2 col-form-label"
-              >Checkboxes and radios</label
+                >Checkboxes and radios</label
               >
               <div class="col-sm-10 checkbox-radios">
                 <base-checkbox v-model="checkboxes.first"
-                >First checkbox</base-checkbox
+                  >First checkbox</base-checkbox
                 >
                 <base-checkbox v-model="checkboxes.second"
-                >Second checkbox</base-checkbox
+                  >Second checkbox</base-checkbox
                 >
 
                 <base-radio name="1" v-model="radios.radio1"
-                >First Radio</base-radio
+                  >First Radio</base-radio
                 >
                 <base-radio name="2" v-model="radios.radio1"
-                >Second Radio</base-radio
+                  >Second Radio</base-radio
                 >
               </div>
             </div>
@@ -154,30 +154,30 @@
         <form method="get" action="/" class="form-horizontal">
           <div class="row">
             <label class="col-sm-2 col-form-label"
-            >Custom Checkboxes &amp; radios</label
+              >Custom Checkboxes &amp; radios</label
             >
             <div class="col-sm-4 col-sm-offset-1 checkbox-radios">
               <base-checkbox>Unchecked</base-checkbox>
               <base-checkbox :checked="true">Checked</base-checkbox>
               <base-checkbox disabled>Disabled Checked</base-checkbox>
               <base-checkbox disabled :checked="true"
-              >Disabled Checked</base-checkbox
+                >Disabled Checked</base-checkbox
               >
             </div>
 
             <div class="col-sm-5 checkbox-radios">
               <base-radio v-model="radios.radioOn" name="1"
-              >Radio is On</base-radio
+                >Radio is On</base-radio
               >
               <base-radio v-model="radios.radioOn" name="2"
-              >Radio is Off</base-radio
+                >Radio is Off</base-radio
               >
 
               <base-radio v-model="radios.radioOff" name="1" disabled
-              >Radio is On</base-radio
+                >Radio is On</base-radio
               >
               <base-radio v-model="radios.radioOff" name="2" disabled
-              >Radio is Off</base-radio
+                >Radio is Off</base-radio
               >
             </div>
           </div>
@@ -221,35 +221,35 @@
   </div>
 </template>
 <script>
-  import { BaseCheckbox, BaseRadio } from 'src/components/index';
+import { BaseCheckbox, BaseRadio } from 'src/components/index';
 
-  export default {
-    components: {
-      BaseCheckbox,
-      BaseRadio
-    },
-    data() {
-      return {
-        radios: {
-          radio1: '1',
-          radio2: '2',
-          radio3: '2',
-          radioOn: '2',
-          radioOff: '2'
-        },
-        checkboxes: {
-          first: false,
-          second: false,
-          a: false,
-          b: false,
-          c: false,
-          unchecked: false,
-          checked: true,
-          disabledUnchecked: false,
-          disabledChecked: true
-        }
-      };
-    }
-  };
+export default {
+  components: {
+    BaseCheckbox,
+    BaseRadio
+  },
+  data() {
+    return {
+      radios: {
+        radio1: '1',
+        radio2: '2',
+        radio3: '2',
+        radioOn: '2',
+        radioOff: '2'
+      },
+      checkboxes: {
+        first: false,
+        second: false,
+        a: false,
+        b: false,
+        c: false,
+        unchecked: false,
+        checked: true,
+        disabledUnchecked: false,
+        disabledChecked: true
+      }
+    };
+  }
+};
 </script>
 <style></style>

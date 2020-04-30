@@ -15,7 +15,7 @@
             </base-input>
           </div>
           <label class="col-sm-3 label-on-right"
-          ><code>required="true"</code></label
+            ><code>required="true"</code></label
           >
         </div>
 
@@ -31,7 +31,7 @@
             </base-input>
           </div>
           <label class="col-sm-3 label-on-right"
-          ><code>email="true"</code></label
+            ><code>email="true"</code></label
           >
         </div>
 
@@ -47,7 +47,7 @@
             </base-input>
           </div>
           <label class="col-sm-3 label-on-right"
-          ><code>numeric="true"</code></label
+            ><code>numeric="true"</code></label
           >
         </div>
 
@@ -89,7 +89,7 @@
           </div>
 
           <label class="col-sm-4 label-on-right"
-          ><code>confirmed="equalToSource"</code></label
+            ><code>confirmed="equalToSource"</code></label
           >
         </div>
       </div>
@@ -98,57 +98,57 @@
           native-type="submit"
           @click.native.prevent="validate"
           type="primary"
-        >Validate inputs</base-button
+          >Validate inputs</base-button
         >
       </div>
     </card>
   </form>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        model: {
-          required: '',
-          email: '',
-          number: '',
-          equalToSourceurl: '',
-          equalToSource: '',
-          equalToDest: ''
-        },
-        modelValidations: {
-          required: {
-            required: true
-          },
-          email: {
-            email: true
-          },
-          number: {
-            numeric: true
-          },
-          url: {
-            url: true
-          },
-          equalToSource: {
-            required: true
-          },
-          equalToDest: {
-            required: true,
-            confirmed: 'equalToSource'
-          }
-        }
-      };
-    },
-    methods: {
-      getError(fieldName) {
-        return this.errors.first(fieldName);
+export default {
+  data() {
+    return {
+      model: {
+        required: '',
+        email: '',
+        number: '',
+        equalToSourceurl: '',
+        equalToSource: '',
+        equalToDest: ''
       },
-      validate() {
-        this.$validator.validateAll().then(isValid => {
-          this.$emit('on-submit', this.registerForm, isValid);
-        });
+      modelValidations: {
+        required: {
+          required: true
+        },
+        email: {
+          email: true
+        },
+        number: {
+          numeric: true
+        },
+        url: {
+          url: true
+        },
+        equalToSource: {
+          required: true
+        },
+        equalToDest: {
+          required: true,
+          confirmed: 'equalToSource'
+        }
       }
+    };
+  },
+  methods: {
+    getError(fieldName) {
+      return this.errors.first(fieldName);
+    },
+    validate() {
+      this.$validator.validateAll().then(isValid => {
+        this.$emit('on-submit', this.registerForm, isValid);
+      });
     }
-  };
+  }
+};
 </script>
 <style></style>
