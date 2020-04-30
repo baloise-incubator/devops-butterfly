@@ -1,28 +1,19 @@
 <template>
-  <div>
-    <notifications></notifications>
-    <router-view :key="$route.fullPath"></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
   export default {
     methods: {
-      disableRTL() {
+      initializeLayout() {
         if (!this.$rtl.isRTL) {
+          // Just make sure rtl css is off when we are not on rtl
           this.$rtl.disableRTL();
         }
-      },
-      toggleNavOpen() {
-        let root = document.getElementsByTagName('html')[0];
-        root.classList.toggle('nav-open');
       }
     },
     mounted() {
-      this.$watch('$route', this.disableRTL, { immediate: true });
-      this.$watch('$sidebar.showSidebar', this.toggleNavOpen)
+      this.initializeLayout();
     }
   };
 </script>
-
-<style lang="scss"></style>

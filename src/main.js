@@ -1,33 +1,44 @@
-/*
+/*!
+
  =========================================================
- * Vue Black Dashboard - v1.1.0
+ * Vue Black Dashboard PRO - v1.2.1
  =========================================================
 
- * Product Page: https://www.creative-tim.com/product/black-dashboard
- * Copyright 2018 Creative Tim (http://www.creative-tim.com)
+ * Product Page: https://www.creative-tim.com/product/material-kit-pro
+ * Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+ * Coded by Creative Tim
 
  =========================================================
 
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
  */
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import VueAnalytics from 'vue-analytics'
 import RouterPrefetch from 'vue-router-prefetch'
-import App from "./App";
-// TIP: change to import router from "./router/starterRouter"; to start with a clean layout
-import router from "./router/index";
+import DashboardPlugin from './plugins/dashboard-plugin';
+import App from './App.vue';
 
-import BlackDashboard from "./plugins/blackDashboard";
-import i18n from "./i18n"
+// router setup
+import router from './routes/router';
+import i18n from './i18n';
 import './registerServiceWorker'
-Vue.use(BlackDashboard);
+// plugin setup
+Vue.use(DashboardPlugin);
 Vue.use(VueRouter);
 Vue.use(RouterPrefetch);
-
+Vue.use(VueAnalytics, {
+  id: 'UA-46172202-9',
+  router,
+  autoTracking: {
+    pageviewOnLoad: false
+  }
+})
 /* eslint-disable no-new */
 new Vue({
+  el: '#app',
+  render: h => h(App),
   router,
-  i18n,
-  render: h => h(App)
-}).$mount("#app");
+  i18n
+});

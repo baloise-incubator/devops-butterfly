@@ -4,13 +4,14 @@ export default {
       data() {
         return {
           isRTL: false
-        }
+        };
       },
       methods: {
         getDocClasses() {
-          return document.body.classList
+          return document.body.classList;
         },
         enableRTL() {
+          import('@/assets/sass/black-dashboard/custom/_rtl.scss')
           this.isRTL = true;
           this.getDocClasses().add('rtl');
           this.getDocClasses().add('menu-on-right');
@@ -23,10 +24,10 @@ export default {
           this.toggleBootstrapRTL(false);
         },
         toggleBootstrapRTL(value) {
-          for (let i=0; i < document.styleSheets.length; i++){
+          for (let i = 0; i < document.styleSheets.length; i++) {
             let styleSheet = document.styleSheets[i];
             let { href } = styleSheet;
-            if(href && href.endsWith('bootstrap-rtl.css')){
+            if (href && href.endsWith('bootstrap-rtl.css')) {
               styleSheet.disabled = !value;
             }
           }
@@ -36,4 +37,4 @@ export default {
 
     Vue.prototype.$rtl = app;
   }
-}
+};
