@@ -32,7 +32,6 @@ import Slider from './Slider.vue';
 import SimpleWizard from './Wizard/Wizard.vue';
 import WizardTab from './Wizard/WizardTab.vue';
 import LoadingPanel from './LoadingPanel.vue';
-import AsyncWorldMap from './WorldMap/AsyncWorldMap.vue';
 
 import BasePagination from './BasePagination.vue';
 
@@ -74,6 +73,5 @@ export {
   BaseButton,
   Collapse,
   CollapseItem,
-  LoadingPanel,
-  AsyncWorldMap
+  LoadingPanel
 };

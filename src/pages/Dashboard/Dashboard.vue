@@ -158,7 +158,6 @@ import BarChart from '@/components/Charts/BarChart';
 import * as chartConfigs from '@/components/Charts/config';
 import TaskList from './TaskList';
 import UserTable from './UserTable';
-import CountryMapCard from './CountryMapCard';
 import StatsCard from 'src/components/Cards/StatsCard';
 import config from '@/config';
 
@@ -189,7 +188,6 @@ export default {
     BarChart,
     StatsCard,
     TaskList,
-    CountryMapCard,
     UserTable
   },
   data() {

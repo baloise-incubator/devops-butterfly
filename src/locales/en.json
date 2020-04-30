@@ -29,10 +29,6 @@
     "regularTables": "Regular Tables",
     "extendedTables": "Extended Tables",
     "paginatedTables": "Paginated Tables",
-    "maps": "Maps",
-    "googleMaps": "Google Maps",
-    "fullScreenMaps": "Full Screen Map",
-    "vectorMaps": "Vector Maps",
     "widgets": "Widgets",
     "charts": "Charts"
   }

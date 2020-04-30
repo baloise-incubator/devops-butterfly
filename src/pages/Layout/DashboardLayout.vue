@@ -137,22 +137,6 @@
           ></sidebar-item>
         </sidebar-item>
         <sidebar-item
-          :link="{ name: $t('sidebar.maps'), icon: 'tim-icons icon-pin' }"
-        >
-          <sidebar-item
-            :link="{ name: $t('sidebar.googleMaps'), path: '/maps/google' }"
-          ></sidebar-item>
-          <sidebar-item
-            :link="{
-              name: $t('sidebar.fullScreenMaps'),
-              path: '/maps/full-screen'
-            }"
-          ></sidebar-item>
-          <sidebar-item
-            :link="{ name: $t('sidebar.vectorMaps'), path: '/maps/vector-map' }"
-          ></sidebar-item>
-        </sidebar-item>
-        <sidebar-item
           :link="{
             name: $t('sidebar.widgets'),
             icon: 'tim-icons icon-settings',

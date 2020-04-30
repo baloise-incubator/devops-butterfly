@@ -48,14 +48,6 @@ const ExtendedForms = () => import("src/pages/Forms/ExtendedForms.vue");
 const ValidationForms = () => import("src/pages/Forms/ValidationForms.vue");
 const Wizard = () => import("src/pages/Forms/Wizard.vue");
 
-// Maps pages
-const GoogleMaps = () =>
-  import(/* webpackChunkName: "extra" */ "src/pages/Maps/GoogleMaps.vue");
-const FullScreenMap = () =>
-  import(/* webpackChunkName: "extra" */ "src/pages/Maps/FullScreenMap.vue");
-const VectorMaps = () =>
-  import(/* webpackChunkName: "extra" */ "src/pages/Maps/VectorMaps.vue");
-
 // Pages
 const User = () =>
   import(/* webpackChunkName: "pages" */ "src/pages/Pages/UserProfile.vue");
@@ -177,34 +169,6 @@ let tablesMenu = {
   ],
 };
 
-let mapsMenu = {
-  path: "/maps",
-  component: DashboardLayout,
-  name: "Maps",
-  redirect: "/maps/google",
-  children: [
-    {
-      path: "google",
-      name: "Google Maps",
-      components: { default: GoogleMaps },
-    },
-    {
-      path: "full-screen",
-      name: "Full Screen Map",
-      meta: {
-        hideContent: true,
-        hideFooter: true,
-      },
-      components: { default: FullScreenMap },
-    },
-    {
-      path: "vector-map",
-      name: "Vector Map",
-      components: { default: VectorMaps },
-    },
-  ],
-};
-
 let pagesMenu = {
   path: "/pages",
   component: DashboardLayout,
@@ -261,7 +225,6 @@ const routes = [
   componentsMenu,
   formsMenu,
   tablesMenu,
-  mapsMenu,
   pagesMenu,
   authPages,
   {
