@@ -149,7 +149,6 @@
         <div class="table-responsive"><user-table></user-table></div>
       </card>
     </div>
-    <div class="col-lg-12"><country-map-card></country-map-card></div>
   </div>
 </template>
 <script>
@@ -160,6 +159,7 @@ import TaskList from './TaskList';
 import UserTable from './UserTable';
 import StatsCard from 'src/components/Cards/StatsCard';
 import config from '@/config';
+import {FETCH_VULNERABILITIES} from "../../store/actions.type";
 
 let bigChartData = [
   [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100],
@@ -192,6 +192,7 @@ export default {
   },
   data() {
     return {
+      vulnerabilities: [],
       statsCards: [
         {
           title: '150GB',
@@ -330,10 +331,11 @@ export default {
       this.$refs.bigChart.updateGradients(chartData);
       this.bigLineChart.chartData = chartData;
       this.bigLineChart.activeIndex = index;
-    }
+    },
   },
   mounted() {
     this.i18n = this.$i18n;
+    this.$store.dispatch(FETCH_VULNERABILITIES);
     this.initBigChart(0);
   }
 };
