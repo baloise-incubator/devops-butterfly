@@ -150,6 +150,13 @@
             path: '/charts'
           }"
         ></sidebar-item>
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.rollouts'),
+            icon: 'tim-icons icon-chart-bar-32',
+            path: '/rollouts'
+          }"
+        ></sidebar-item>
       </template>
     </side-bar>
     <!--Share plugin (for demo purposes). You can remove it if don't plan on using it-->

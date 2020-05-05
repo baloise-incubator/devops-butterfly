@@ -41,6 +41,7 @@ const Dashboard = () =>
     /* webpackChunkName: "dashboard" */ "src/pages/Dashboard/Dashboard.vue"
   );
 import Widgets from "src/pages/Widgets.vue";
+import Rollouts from "../pages/Rollouts/Rollouts";
 
 // Forms pages
 const RegularForms = () => import("src/pages/Forms/RegularForms.vue");
@@ -247,6 +248,11 @@ const routes = [
         path: "widgets",
         name: "Widgets",
         components: { default: Widgets },
+      },
+      {
+        path: "rollouts",
+        name: "Rollout Overview",
+        components: { default: Rollouts },
       },
     ],
   },
