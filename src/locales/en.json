@@ -30,6 +30,7 @@
     "extendedTables": "Extended Tables",
     "paginatedTables": "Paginated Tables",
     "widgets": "Widgets",
-    "charts": "Charts"
+    "charts": "Charts",
+    "rollouts": "Rollout Overview"
   }
 }
